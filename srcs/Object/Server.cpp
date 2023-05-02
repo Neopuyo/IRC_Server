@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Server.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zelinsta <zelinsta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tquere <tquere@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 10:50:43 by tquere            #+#    #+#             */
-/*   Updated: 2023/05/02 10:56:30 by zelinsta         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:12:31 by tquere           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	Server::Run()
 {
     int ret = 0;
 
-    while (true) 
+    while (!Stop) 
     {
         int ret = poll(_Poll_Set, _CltMng.Nb_Clients, -1);
         if (ret < 0) 

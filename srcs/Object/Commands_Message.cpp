@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Commands_Message.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zelinsta <zelinsta@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tquere <tquere@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 10:09:32 by tquere            #+#    #+#             */
-/*   Updated: 2023/05/02 10:22:53 by zelinsta         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:22:14 by tquere           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,11 @@ void  PRIVMSG_Command::Execute(Client *From_Client, std::vector<std::string> Arg
                 continue;
             }
 
+            if (!To_Client->Logged)
+            {
+                continue;
+            }
+
             std::string Msg = ":" + From_Client->NickName + "!" + From_Client->UserName + "@" + From_Client->HostName + " PRIVMSG " + To_Client->NickName + " :" + Message_to_send + "\n";
             Send_Cmd(To_Client->Socket, Msg);
         }
@@ -155,6 +160,11 @@ void  NOTICE_Command::Execute(Client *From_Client, std::vector<std::string> Args
 
             if (To_Client->Away)
                 continue;
+
+            if (!To_Client->Logged)
+            {
+                continue;
+            }
 
             std::string Msg = ":" + From_Client->NickName + "!" + From_Client->UserName + "@" + From_Client->HostName + " NOTICE " + To_Client->NickName + " :" + Message_to_send + "\n";
             Send_Cmd(To_Client->Socket, Msg);

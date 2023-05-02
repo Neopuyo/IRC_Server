@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bot.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tquere <tquere@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/02 13:29:04 by tquere            #+#    #+#             */
+/*   Updated: 2023/05/02 13:29:06 by tquere           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/bot.hpp"
-
-
 
 std::string I_To_S(int num)
 {
@@ -116,29 +126,6 @@ int	Bot::Run()
             send(_Bot_Socket, ping_cmd.c_str(), ping_cmd.length(), 0);
             log("Ping!");
         } 
-
-        // else if (response.find("PRIVMSG") != std::string::npos) 
-        // {
-        //     // Traiter les messages PRIVMSG
-        //     std::string sender = response.substr(1, response.find("!") - 1);
-        //     std::string message = response.substr(response.find("PRIVMSG") + 8);
-        //     std::string channel = message.substr(0, message.find(" "));
-        //     std::string command = message.substr(message.find(" ") + 1);
-
-        //     if (command.find("ping") != std::string::npos) 
-        //     {
-        //         // Répondre "pong" si la commande est "ping"
-        //         std::string pong_cmd = "PRIVMSG " + channel + " :pong\r\n";
-        //         send(_Bot_Socket, pong_cmd.c_str(), pong_cmd.length(), 0);
-        //     } 
-
-        //     else if (command.find("pong") != std::string::npos) 
-        //     {
-        //         // Répondre "ping" si la commande est "pong"
-        //         std::string ping_cmd = "PRIVMSG " + channel + " :ping\r\n";
-        //         send(_Bot_Socket, ping_cmd.c_str(), ping_cmd.length(), 0);
-        //     }
-        // }
     }
 
     return GOOD;

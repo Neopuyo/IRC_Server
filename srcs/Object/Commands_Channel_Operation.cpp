@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Commands_Channel_Operation.cpp                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loumarti <loumarti@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tquere <tquere@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 08:38:09 by zelinsta          #+#    #+#             */
-/*   Updated: 2023/04/26 09:45:43 by loumarti         ###   ########lyon.fr   */
+/*   Created: 2023/04/03 08:38:09 by tquere            #+#    #+#             */
+/*   Updated: 2023/05/02 11:51:35 by tquere           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

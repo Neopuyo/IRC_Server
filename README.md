@@ -12,11 +12,10 @@ together to form a network.
 ## Launching server
 
 The executable takes two arguments, the port and the password for the server.
-to launch the server, run the following commands:
+To launch the server, run the following commands:
 
 ```bash
-make
-./ircserv 6667 test
+make && ./ircserv 6667 test
 ```
 
 ## Connecting to the server
